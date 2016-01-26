@@ -1,0 +1,6 @@
+<h1>Photos Gallery (<%= @photos.length %>)</h1>
+<h3><%= link_to "Add New Collection", "/photos/new" %></h3>
+<% @photos.each do |t| %>
+<p><%= t.theme %>, <%= t.description %></p>
+<%= link_to image_tag(t.url), photo_path(t.id) %>
+<% end %>

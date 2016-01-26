@@ -17,7 +17,21 @@ Picture.create!(
 )
 
 
-
+Photo.create!(
+  :theme => "Beautiful Views",
+  :description => "Hills and Rivers",
+  :url => "https://static.pexels.com/photos/1562/italian-landscape-mountains-nature-medium.jpg"
+)
+Photo.create!(
+  :theme => "Civilization",
+  :description => "High Rise",
+  :url => "https://static.pexels.com/photos/1139/black-and-white-city-skyline-buildings-medium.jpg"
+)
+Photo.create!(
+  :theme => "Animals",
+  :description => "Bear",
+  :url => "https://static.pexels.com/photos/2740/nature-animal-fur-dangerous-medium.jpg"
+)
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #

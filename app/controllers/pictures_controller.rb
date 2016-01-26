@@ -4,6 +4,8 @@ class PicturesController < ApplicationController
     @pictures = Picture.all
   end
 
+
+
   def show
     @picture = Picture.find(params[:id])
   end
@@ -35,14 +37,19 @@ class PicturesController < ApplicationController
     else
       render :edit
     end
-    
+
   end
 
-  private
+  def destroy                                   # why when this method was moved to the end of this file doesnt work?
+   @picture = Picture.find(params[:id])
+   @picture.destroy
+   redirect_to pictures_url
+  end
+
+  private              #??
   def picture_params
     params.require(:picture).permit(:artist, :title, :url)
   end
-
 
 
 

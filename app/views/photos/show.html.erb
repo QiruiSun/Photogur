@@ -1,0 +1,6 @@
+<h2>Theme:</h2>
+<p><strong><%= @photo.theme %></strong></p>
+<h3>Desciption:</h3>
+<p><%= @photo.description %></p>
+<p> <%= link_to "Back to Photo Gallery", photos_url %> | <%= link_to "Edit", edit_photo_path %> | <%= link_to "Delete", @photo, method: :delete, data: {confirm: "Are you sure to delete this photo collection?"} %></p>
+<%= image_tag @photo.url %>

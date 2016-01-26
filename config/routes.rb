@@ -1,16 +1,38 @@
 Rails.application.routes.draw do
-  root 'pictures#index'
 
-  get 'pictures' => 'pictures#index'
-  post 'pictures' => 'pictures#create'
+  root 'photos#index'
 
-  get 'pictures/new' => 'pictures#new'
+  delete 'photos/:id' => 'photos#destroy'
 
-  get 'pictures/:id' => 'pictures#show', as: 'picture'
+  get 'photos' => 'photos#index'
 
-  get 'pictures/:id/edit' => 'pictures#edit', as: 'edit_picture'
-  patch '/pictures/:id' => 'pictures#update'
-  
+  post 'photos' => 'photos#create'
+
+  patch 'photos/:id' => 'photos#update'
+
+  get 'photos/:id/edit' => 'photos#edit', as: "edit_photo"
+
+  get 'photos/new' => 'photos#new'   # why this cant be behind the show method?
+
+  get 'photos/:id' => 'photos#show', as: "photo"
+
+
+
+
+  # delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture"
+  #
+  # root 'pictures#index'
+  #
+  # get 'pictures' => 'pictures#index'
+  # post 'pictures' => 'pictures#create'
+  #
+  # get 'pictures/new' => 'pictures#new'
+  #
+  # get 'pictures/:id' => 'pictures#show', as: 'picture'
+  #
+  # get 'pictures/:id/edit' => 'pictures#edit', as: 'edit_picture'
+  # patch '/pictures/:id' => 'pictures#update'
+  resources :pictures
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,21 @@
+<h1>Edit Photo</h1>
+<p> <%= link_to "Back to the photo", photo_path(@photo) %> </p>
+<p> <%= link_to "Back to Photo Gallery", photos_url %> </p>
+
+<%= form_for @photo do |t| %>
+<p>
+  <%= t.label :theme %>
+  <%= t.text_field :theme %>
+</p>
+<p>
+  <%= t.label :description %>
+  <%= t.text_field :description %>
+</p>
+<p>
+  <%= t.label :url %>
+  <%= t.text_field :url %>
+</p>
+<p>
+  <%= t.submit "update" %>
+</p>
+<% end %>
